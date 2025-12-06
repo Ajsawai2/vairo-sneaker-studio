@@ -65,7 +65,7 @@ const Index = () => {
                 <img
                   src={heroSneaker}
                   alt="Premium Sneaker"
-                  className="relative w-full max-w-lg float-animation drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]"
+                  className="relative w-full max-w-2xl float-animation drop-shadow-[0_40px_40px_rgba(0,0,0,0.2)]"
                 />
                 {/* Shadow underneath sneaker */}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/10 blur-2xl rounded-full" />
