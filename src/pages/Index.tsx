@@ -62,13 +62,13 @@ const Index = () => {
             {/* Right - Hero Sneaker */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative">
-                {/* Glow effect behind sneaker */}
-                <div className="absolute inset-0 bg-gradient-to-br from-glow-pink via-glow-blue to-glow-purple opacity-30 blur-3xl rounded-full scale-125" />
                 <img
                   src={heroSneaker}
                   alt="Premium Sneaker"
-                  className="relative w-full max-w-lg float-animation product-shadow"
+                  className="relative w-full max-w-lg float-animation drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)]"
                 />
+                {/* Shadow underneath sneaker */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/10 blur-2xl rounded-full" />
               </div>
             </div>
           </div>
