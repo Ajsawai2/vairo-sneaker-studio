@@ -5,35 +5,26 @@ import ProductCard from '@/components/ProductCard';
 import CategoryCard from '@/components/CategoryCard';
 import heroSneaker from '@/assets/hero-sneaker.png';
 import { products, categories } from '@/data/products';
-
 const Index = () => {
   const popularProducts = products.slice(0, 4);
-
-  const features = [
-    {
-      icon: Shield,
-      title: 'Quality Replica',
-      description: 'Highest standard materials and craftsmanship',
-    },
-    {
-      icon: IndianRupee,
-      title: 'Affordable Prices',
-      description: 'Branded look at a fraction of the cost',
-    },
-    {
-      icon: Truck,
-      title: 'Fast Delivery',
-      description: 'Same-day delivery available in Nagpur',
-    },
-    {
-      icon: RefreshCcw,
-      title: 'Easy Returns',
-      description: 'Hassle-free return process',
-    },
-  ];
-
-  return (
-    <Layout>
+  const features = [{
+    icon: Shield,
+    title: 'Quality Replica',
+    description: 'Highest standard materials and craftsmanship'
+  }, {
+    icon: IndianRupee,
+    title: 'Affordable Prices',
+    description: 'Branded look at a fraction of the cost'
+  }, {
+    icon: Truck,
+    title: 'Fast Delivery',
+    description: 'Same-day delivery available in Nagpur'
+  }, {
+    icon: RefreshCcw,
+    title: 'Easy Returns',
+    description: 'Hassle-free return process'
+  }];
+  return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="section-container w-full">
@@ -62,11 +53,7 @@ const Index = () => {
             {/* Right - Hero Sneaker */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative">
-                <img
-                  src={heroSneaker}
-                  alt="Premium Sneaker"
-                  className="relative w-full max-w-2xl float-animation drop-shadow-[0_40px_40px_rgba(0,0,0,0.2)]"
-                />
+                <img src={heroSneaker} alt="Premium Sneaker" className="relative w-full max-w-2xl float-animation drop-shadow-[0_40px_40px_rgba(0,0,0,0.2)] object-contain" />
                 {/* Shadow underneath sneaker */}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/10 blur-2xl rounded-full" />
               </div>
@@ -81,15 +68,11 @@ const Index = () => {
           <div className="glass-card p-8 md:p-12">
             <h2 className="text-2xl font-bold mb-8">Shop by Category</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-              {categories.map((category, index) => (
-                <div
-                  key={category.slug}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {categories.map((category, index) => <div key={category.slug} className="animate-fade-in" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <CategoryCard {...category} />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -105,21 +88,11 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {popularProducts.map((product, index) => (
-              <div
-                key={product.id}
-                className="animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <ProductCard
-                  id={product.id}
-                  name={product.name}
-                  price={product.price}
-                  image={product.image}
-                  category={product.category}
-                />
-              </div>
-            ))}
+            {popularProducts.map((product, index) => <div key={product.id} className="animate-slide-up" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
+                <ProductCard id={product.id} name={product.name} price={product.price} image={product.image} category={product.category} />
+              </div>)}
           </div>
         </div>
       </section>
@@ -129,24 +102,18 @@ const Index = () => {
         <div className="section-container">
           <h2 className="text-2xl font-bold text-center mb-12">Why Choose VAIRO?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="glass-card-hover hover-glow p-8 text-center animate-scale-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {features.map((feature, index) => <div key={feature.title} className="glass-card-hover hover-glow p-8 text-center animate-scale-in" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default Index;
