@@ -62,7 +62,7 @@ const Index = () => {
               <img 
                 src={heroSneaker} 
                 alt="Premium Sneaker" 
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl float-animation drop-shadow-[0_30px_50px_rgba(0,0,0,0.3)] object-contain" 
+                className="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain" 
               />
             </div>
           </div>
