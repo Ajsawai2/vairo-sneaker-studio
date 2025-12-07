@@ -35,7 +35,7 @@ const Index = () => {
         </div>
         
         <div className="section-container w-full">
-          <div className="relative flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-0">
+          <div className="relative lg:flex-row lg:items-center gap-8 lg:gap-0 items-start justify-end flex flex-row">
             {/* Left - Text (higher z-index) */}
             <div className="relative z-20 space-y-8 animate-fade-in lg:w-1/2">
               <h1 className="hero-title">
@@ -59,11 +59,7 @@ const Index = () => {
 
             {/* Right - Hero Sneaker */}
             <div className="relative z-10 lg:w-1/2 flex justify-center lg:justify-end">
-              <img 
-                src={heroSneaker} 
-                alt="Premium Sneaker" 
-                className="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain" 
-              />
+              <img src={heroSneaker} alt="Premium Sneaker" className="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain shadow-none" />
             </div>
           </div>
         </div>
