@@ -59,7 +59,7 @@ const Index = () => {
 
             {/* Right - Hero Sneaker */}
             <div className="relative z-10 lg:w-1/2 flex justify-center lg:justify-end">
-              <img src={heroSneaker} alt="Premium Sneaker" className="w-full max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain shadow-none" />
+              <img src={heroSneaker} alt="Premium Sneaker" className="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain shadow-none" />
             </div>
           </div>
         </div>
