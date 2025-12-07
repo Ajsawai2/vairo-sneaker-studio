@@ -28,34 +28,38 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="section-container w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Text */}
-            <div className="space-y-8 animate-fade-in">
-              <h1 className="hero-title">
-                LOOK<br />
-                ORIGINAL.<br />
-                <span className="text-muted-foreground">PAY LESS.</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-md">
-                Premium replica sneakers that look and feel original. 
-                India's trusted marketplace for quality kicks.
-              </p>
-              <div className="flex gap-4">
-                <Link to="/products" className="btn-primary">
-                  Shop Now
-                </Link>
-                <Link to="/categories" className="btn-secondary">
-                  Browse Categories
-                </Link>
+          <div className="glass-card p-8 md:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left - Text */}
+              <div className="space-y-8 animate-fade-in order-2 lg:order-1">
+                <h1 className="hero-title">
+                  LOOK<br />
+                  ORIGINAL.<br />
+                  <span className="text-muted-foreground">PAY LESS.</span>
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-md">
+                  Premium replica sneakers that look and feel original. 
+                  India's trusted marketplace for quality kicks.
+                </p>
+                <div className="flex gap-4">
+                  <Link to="/products" className="btn-primary">
+                    Shop Now
+                  </Link>
+                  <Link to="/categories" className="btn-secondary">
+                    Browse Categories
+                  </Link>
+                </div>
               </div>
-            </div>
 
-            {/* Right - Hero Sneaker */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                <img src={heroSneaker} alt="Premium Sneaker" className="relative w-full max-w-2xl float-animation drop-shadow-[0_40px_40px_rgba(0,0,0,0.2)] object-contain" />
-                {/* Shadow underneath sneaker */}
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/10 blur-2xl rounded-full" />
+              {/* Right - Hero Sneaker */}
+              <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+                <div className="relative">
+                  <img 
+                    src={heroSneaker} 
+                    alt="Premium Sneaker" 
+                    className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl float-animation drop-shadow-[0_30px_50px_rgba(0,0,0,0.25)] object-contain" 
+                  />
+                </div>
               </div>
             </div>
           </div>
