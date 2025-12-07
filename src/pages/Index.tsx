@@ -27,40 +27,43 @@ const Index = () => {
   return <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Big background text */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none overflow-hidden">
+          <span className="text-[10rem] md:text-[14rem] lg:text-[18rem] xl:text-[22rem] font-black text-muted-foreground/5 leading-none tracking-tighter whitespace-nowrap">
+            KICKS
+          </span>
+        </div>
+        
         <div className="section-container w-full">
-          <div className="glass-card p-8 md:p-12 lg:p-16">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left - Text */}
-              <div className="space-y-8 animate-fade-in order-2 lg:order-1">
-                <h1 className="hero-title">
-                  LOOK<br />
-                  ORIGINAL.<br />
-                  <span className="text-muted-foreground">PAY LESS.</span>
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-md">
-                  Premium replica sneakers that look and feel original. 
-                  India's trusted marketplace for quality kicks.
-                </p>
-                <div className="flex gap-4">
-                  <Link to="/products" className="btn-primary">
-                    Shop Now
-                  </Link>
-                  <Link to="/categories" className="btn-secondary">
-                    Browse Categories
-                  </Link>
-                </div>
+          <div className="relative flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-0">
+            {/* Left - Text (higher z-index) */}
+            <div className="relative z-20 space-y-8 animate-fade-in lg:w-1/2">
+              <h1 className="hero-title">
+                LOOK<br />
+                ORIGINAL.<br />
+                <span className="text-muted-foreground">PAY LESS.</span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-md">
+                Premium replica sneakers that look and feel original. 
+                India's trusted marketplace for quality kicks.
+              </p>
+              <div className="flex gap-4">
+                <Link to="/products" className="btn-primary">
+                  Shop Now
+                </Link>
+                <Link to="/categories" className="btn-secondary">
+                  Browse Categories
+                </Link>
               </div>
+            </div>
 
-              {/* Right - Hero Sneaker */}
-              <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
-                <div className="relative">
-                  <img 
-                    src={heroSneaker} 
-                    alt="Premium Sneaker" 
-                    className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl float-animation drop-shadow-[0_30px_50px_rgba(0,0,0,0.25)] object-contain" 
-                  />
-                </div>
-              </div>
+            {/* Right - Hero Sneaker */}
+            <div className="relative z-10 lg:w-1/2 flex justify-center lg:justify-end">
+              <img 
+                src={heroSneaker} 
+                alt="Premium Sneaker" 
+                className="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl float-animation drop-shadow-[0_30px_50px_rgba(0,0,0,0.3)] object-contain" 
+              />
             </div>
           </div>
         </div>
