@@ -58,8 +58,8 @@ const Index = () => {
             </div>
 
             {/* Right - Hero Sneaker */}
-            <div className="relative z-10 lg:w-1/2 flex justify-center lg:justify-end">
-              <img src={heroSneaker} alt="Premium Sneaker" className="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl float-animation drop-shadow-[0_40px_60px_rgba(0,0,0,0.2)] object-contain shadow-none" />
+            <div className="relative z-30 lg:w-1/2 flex justify-center lg:justify-end -ml-20 lg:-ml-32">
+              <img src={heroSneaker} alt="Premium Sneaker" className="w-full max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl scale-110 float-animation drop-shadow-[0_50px_80px_rgba(0,0,0,0.3)] object-contain shadow-none" />
             </div>
           </div>
         </div>
