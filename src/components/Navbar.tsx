@@ -24,10 +24,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-5 left-5 right-5 z-50 transition-all duration-300 rounded-[30px] ${
         isScrolled
           ? 'glass-card py-3'
-          : 'bg-transparent py-5'
+          : 'bg-background/80 backdrop-blur-md py-5'
       }`}
     >
       <div className="section-container">
