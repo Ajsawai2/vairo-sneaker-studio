@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
-import vairoLogo from '@/assets/vairo-logo.png';
+import { useCart } from '@/contexts/CartContext';
+import vairoLogo from '@/assets/vairo-logo-new.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { cartCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={vairoLogo} alt="VAIRO" className="h-10 w-auto" />
+            <img src={vairoLogo} alt="VAIRO" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,9 +66,11 @@ const Navbar = () => {
             </button>
             <Link to="/cart" className="btn-ghost p-2 relative">
               <ShoppingBag className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
-                2
-              </span>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
+                  {cartCount}
+                </span>
+              )}
             </Link>
             
             {/* Mobile Menu Button */}

@@ -1,34 +1,13 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Minus, Plus, X, ShoppingBag } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { products } from '@/data/products';
-
-interface CartItem {
-  productId: string;
-  size: number;
-  quantity: number;
-}
+import { useCart } from '@/contexts/CartContext';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    { productId: '1', size: 9, quantity: 1 },
-    { productId: '3', size: 10, quantity: 2 },
-  ]);
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const getProduct = (id: string) => products.find(p => p.id === id);
-
-  const updateQuantity = (index: number, delta: number) => {
-    setCartItems(items =>
-      items.map((item, i) =>
-        i === index ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
-      )
-    );
-  };
-
-  const removeItem = (index: number) => {
-    setCartItems(items => items.filter((_, i) => i !== index));
-  };
 
   const subtotal = cartItems.reduce((sum, item) => {
     const product = getProduct(item.productId);
@@ -99,7 +78,7 @@ const Cart = () => {
                             <p className="text-sm text-muted-foreground">Size: UK {item.size}</p>
                           </div>
                           <button
-                            onClick={() => removeItem(index)}
+                            onClick={() => removeFromCart(index)}
                             className="text-muted-foreground hover:text-foreground transition-colors"
                           >
                             <X className="w-5 h-5" />
